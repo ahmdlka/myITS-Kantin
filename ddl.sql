@@ -70,7 +70,7 @@ CREATE TABLE Pesanan_Menu (
     id_pesanan INT,
     id_menu VARCHAR(5),
     quantity INT NOT NULL,
-    sub_total_bayar NUMERIC(10,2) NOT NULL DEFAULT 0.00,
+    sub_total_bayar NUMERIC(10,2) NOT NULL,
     PRIMARY KEY (id_pesanan, id_menu),
     CONSTRAINT fk_pm_pesanan FOREIGN KEY (id_pesanan) 
         REFERENCES Pesanan(id_pesanan) ON DELETE CASCADE,
