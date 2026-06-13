@@ -6,7 +6,7 @@ CREATE TABLE Departemen (
 
 -- 2. Tabel Kantin
 CREATE TABLE Kantin (
-    id_kantin INT PRIMARY KEY,
+    id_kantin SERIAL PRIMARY KEY,
     nama_kantin VARCHAR(50) NOT NULL,
     lokasi VARCHAR(50) NOT NULL
 );
@@ -25,7 +25,7 @@ CREATE TABLE Pelanggan (
 
 -- 4. Tabel Toko
 CREATE TABLE Toko (
-    id_toko INT PRIMARY KEY,
+    id_toko SERIAL PRIMARY KEY,
     nama VARCHAR(50) NOT NULL,
     waktu_buka TIME NOT NULL,
     waktu_tutup TIME NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE Menu (
 
 -- 6. Tabel Pesanan
 CREATE TABLE Pesanan (
-    id_pesanan INT PRIMARY KEY,
+    id_pesanan SERIAL PRIMARY KEY,
     total_bayar DECIMAL(12,2) NOT NULL DEFAULT 0.00, 
     catatan VARCHAR(255),
     waktu_pesan TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
