@@ -5,7 +5,7 @@
 -- Searching: Pesanan Tunai di Toko Tertentu
 SELECT id_pesanan, total_bayar, waktu_pesan
 FROM Pesanan
-WHERE metode_pembayaran = 'Tunai' AND id_toko = 2;
+WHERE metode_pembayaran = 'Tunai' AND id_toko = 3;
 
 -- Searching: Pelanggan yang membeli menu 'Nasi Goreng'
 SELECT DISTINCT pl.nama, pl.email
