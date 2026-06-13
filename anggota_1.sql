@@ -9,7 +9,7 @@ SELECT p.id_pesanan, pl.nama, d.nama_departemen, p.total_bayar
 FROM Pesanan p
 JOIN Pelanggan pl ON p.id_pelanggan = pl.id_pelanggan
 JOIN Departemen d ON pl.id_departemen = d.id_departemen
-WHERE d.nama_departemen = 'Teknik Informatika';
+WHERE d.nama_departemen = 'Teknik Komputer';
 
 -- View: Daftar Toko dan Lokasinya
 CREATE OR REPLACE VIEW v_daftar_toko_kantin AS
