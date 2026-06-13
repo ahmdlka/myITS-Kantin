@@ -41,7 +41,7 @@ CREATE TABLE Toko (
 CREATE TABLE Menu (
     id_menu VARCHAR(5) PRIMARY KEY,
     nama_menu VARCHAR(50) NOT NULL,
-    harga NUMERIC(9,2) NOT NULL, 
+    harga DECIMAL(9,2) NOT NULL, 
     stok INT NOT NULL DEFAULT 0,
     id_toko INT,
     CONSTRAINT fk_menu_toko FOREIGN KEY (id_toko) 
@@ -51,7 +51,7 @@ CREATE TABLE Menu (
 -- 6. Tabel Pesanan
 CREATE TABLE Pesanan (
     id_pesanan INT PRIMARY KEY,
-    total_bayar NUMERIC(12,2) NOT NULL DEFAULT 0.00, 
+    total_bayar DECIMAL(12,2) NOT NULL DEFAULT 0.00, 
     catatan VARCHAR(255),
     waktu_pesan TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     status_pesanan VARCHAR(25) NOT NULL,
@@ -69,8 +69,8 @@ CREATE TABLE Pesanan (
 CREATE TABLE Pesanan_Menu (
     id_pesanan INT,
     id_menu VARCHAR(5),
-    quantity INT NOT NULL,
-    sub_total_bayar NUMERIC(10,2) NOT NULL,
+    quantity INT NOT NULL DEFAULT 1,
+    sub_total DECIMAL(10,2) NOT NULL,
     PRIMARY KEY (id_pesanan, id_menu),
     CONSTRAINT fk_pm_pesanan FOREIGN KEY (id_pesanan) 
         REFERENCES Pesanan(id_pesanan) ON DELETE CASCADE,
